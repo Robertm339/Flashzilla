@@ -70,11 +70,11 @@
 				453B4EB12B30D02F00A87CA5 /* HomeView.swift */,
 				4592A67F285E80A100E9C06B /* ContentView.swift */,
 				453B4EB32B30D9F900A87CA5 /* MenuView.swift */,
-				453B4EB52B30D9FF00A87CA5 /* PlayingView.swift */,
 				453B4EB72B30DA0600A87CA5 /* GameOverView.swift */,
-				453B4EAD2B30CBDC00A87CA5 /* StartGameView.swift */,
-				455D1292286260B700F9035B /* EditCards.swift */,
 				45AA21AB285FDC6200DFB959 /* CardView.swift */,
+				455D1292286260B700F9035B /* EditCards.swift */,
+				453B4EAD2B30CBDC00A87CA5 /* StartGameView.swift */,
+				453B4EB52B30D9FF00A87CA5 /* PlayingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

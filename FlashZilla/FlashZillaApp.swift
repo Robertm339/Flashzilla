@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct FlashZillaApp: App {
     @State private var viewModel = ViewModel()
-    
+
     var body: some Scene {
         WindowGroup {
             HomeView()

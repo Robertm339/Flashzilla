@@ -21,15 +21,15 @@ extension Shape {
 
 struct CardView: View {
     let card: Card
-    var removal: ((Bool) -> Void)? = nil
-    
+    var removal: ((Bool) -> Void)?
+
     @State private var feedback = UINotificationFeedbackGenerator()
-    
+
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
-    
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 18, style: .continuous)
@@ -45,7 +45,7 @@ struct CardView: View {
                         .fill(using: offset)
                 )
                 .shadow(radius: 10)
-            
+
             VStack {
                 if voiceOverEnabled {
                     Text(isShowingAnswer ? card.answer : card.prompt)
@@ -55,7 +55,7 @@ struct CardView: View {
                     Text(card.prompt)
                         .font(.title)
                         .foregroundColor(.black)
-                    
+
                     if isShowingAnswer {
                         Text(card.answer)
                             .font(.title2)

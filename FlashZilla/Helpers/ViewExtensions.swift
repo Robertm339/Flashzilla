@@ -12,12 +12,12 @@ extension View {
         let offset = Double(total - position)
         return self.offset(x: 0, y: offset * 10)
     }
-    
+
     func backgroundGradient() -> some View {
         self
             .background(LinearGradient(colors: [.mint, .gray, .black], startPoint: .top, endPoint: .bottom))
     }
-    
+
     func titleStyle() -> some View {
         self
             .font(.system(size: 48))
@@ -25,7 +25,7 @@ extension View {
             .fontWeight(.medium)
             .multilineTextAlignment(.center)
     }
-    
+
     func subtitleStyle() -> some View {
         self
             .font(.title.bold())
@@ -36,7 +36,7 @@ extension View {
 struct PrimaryButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.title.bold())
+            .font(.title2.bold())
             .foregroundStyle(configuration.isPressed ? .white : .blue)
             .padding(8)
             .padding(.horizontal, 10)

@@ -13,7 +13,7 @@ struct EditCards: View {
     @State private var newPrompt = ""
     @State private var newAnswer = ""
     @State private var showingAlert = false
-    
+
     var body: some View {
         NavigationStack {
             List {
@@ -23,13 +23,13 @@ struct EditCards: View {
                     Button("Add card", action: addCard)
                         .disabled(newPrompt.isEmpty || newAnswer.isEmpty)
                 }
-                
+
                 Section("Current Cards") {
                     ForEach(0..<cards.count, id: \.self) { index in
                         VStack(alignment: .leading) {
                             Text(cards[index].prompt)
                                 .font(.headline)
-                            
+
                             Text(cards[index].answer)
                                 .foregroundColor(.secondary)
                         }
@@ -38,7 +38,7 @@ struct EditCards: View {
                 }
             }
             .toolbar {
-                
+
                 Button("Done") {
                     showingAlert = true
                 }
@@ -50,27 +50,26 @@ struct EditCards: View {
             .listStyle(.grouped)
         }
     }
-    
+
     func done() {
         dismiss()
     }
-    
-    
+
     func addCard() {
         withAnimation {
             let trimmedPrompt = newPrompt.trimmingCharacters(in: .whitespaces)
             let trimmedAnswer = newAnswer.trimmingCharacters(in: .whitespaces)
             guard trimmedPrompt.isEmpty == false && trimmedAnswer.isEmpty == false else { return }
-            
+
             let card = Card(prompt: trimmedPrompt, answer: trimmedAnswer)
             cards.insert(card, at: 0)
             DataManager.save(cards)
-            
+
             newPrompt = ""
             newAnswer = ""
         }
     }
-    
+
     func removeCards(at offsets: IndexSet) {
         withAnimation {
             cards.remove(atOffsets: offsets)
